@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>V2</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+
+  </head>
+  <body>
+    <div class="page-group">
+        <div class="page page-current" id="qs">
+                <!--底部工具栏开始-->
+                  <nav class="bar bar-tab">
+                    <a class="tab-item active" href="#">
+                      <span class="icon icon-home"></span>
+                      <span class="tab-label">首页</span>
+                    </a>
+                    <a class="tab-item" href="/login">
+                      <span class="icon icon-me"></span>
+                      <span class="tab-label">我</span>
+                    </a>
+                  </nav>
+                <!--底部工具栏结束-->
+                  <div class="content">
+                            <!--顶部标签页开始-->
+                                <div class="buttons-tab">
+                                    <a href="#{{tab_active}}" class="tab-link active button">{{tab_active}}</a>
+                                    {% for x in tab %}
+                                    <a href="#{{x}}" class="tab-link button">{{x}}</a>
+                                    {% endfor %}
+                                </div>
+                            <!--顶部标签页结束-->
+                            <!--对应标签页子内容-->
+                                <div class="content-block">
+                                    {% for xx in all_article %}
+                                    <div class="card">
+                                        <div class="card-content">
+                                          <div class="list-block media-list">
+                                            <ul>
+                                              <li class="item-content">
+                                                <div class="item-media">
+                                                  <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" width="44">
+                                                </div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <a href="/v2_article/{{xx[1]}}">
+                                                    <div class="item-title">{{xx[0]}}</div>
+                                                    </a>
+                                                  </div>
+                                                  <div class="item-subtitle">子标题</div>
+                                                </div>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                        <div class="card-footer">
+                                          <span>2015/01/15</span>
+                                          <!--<span>{{xx}}</span>-->
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+
+                  </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='https://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+
+  </body>
+</html>
